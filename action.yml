@@ -19,7 +19,7 @@ runs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
 
     - name: Build GitHubUpdater CLI
       shell: pwsh
@@ -28,6 +28,6 @@ runs:
     - name: Run GitHubUpdater CLI
       shell: pwsh
       run: |
-        .\src\GitHubAutoUpdater.Cli\bin\Release\net8.0\win-x64\githubautoupdater.exe publish --version ${{ inputs.version }} --app ${{ inputs.app }}
+        .\src\GitHubAutoUpdater.Cli\bin\Release\net9.0\win-x64\githubautoupdater.exe publish --version ${{ inputs.version }} --app ${{ inputs.app }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
