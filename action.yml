@@ -22,9 +22,11 @@ runs:
         dotnet-version: 8.0.x
 
     - name: Build GitHubUpdater CLI
+      shell: pwsh
       run: dotnet publish src/GitHubAutoUpdater.Cli/GitHubAutoUpdater.Cli.csproj -c Release -r win-x64 --self-contained true
 
     - name: Run GitHubUpdater CLI
+      shell: pwsh
       run: |
         .\src\GitHubAutoUpdater.Cli\bin\Release\net8.0\win-x64\githubautoupdater.exe publish --version ${{ inputs.version }} --app ${{ inputs.app }}
       env:
