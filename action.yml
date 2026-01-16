@@ -28,6 +28,6 @@ runs:
     - name: Run GitHubUpdater CLI
       shell: pwsh
       run: |
-        .\src\GitHubAutoUpdater.Cli\bin\Release\net9.0\win-x64\githubautoupdater.exe publish --version ${{ inputs.version }} --app ${{ inputs.app }}
+        .\src\GitHubAutoUpdater.Cli\bin\Release\net9.0\win-x64\publish\githubautoupdater.exe publish --version ${{ inputs.version }} --app ${{ inputs.app }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
